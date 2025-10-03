@@ -1,4 +1,4 @@
-﻿namespace AirCompany.Domain
+﻿namespace AirCompany.Domain;
 
 public class Flight
 {
