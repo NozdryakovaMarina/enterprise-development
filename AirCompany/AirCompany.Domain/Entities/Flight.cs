@@ -1,4 +1,4 @@
-﻿namespace AirCompany.Domain;
+﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
 /// Represents a <see cref="Flight"/> with route and schedule information

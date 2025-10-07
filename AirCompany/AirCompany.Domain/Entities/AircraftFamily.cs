@@ -1,4 +1,4 @@
-﻿namespace AirCompany.Domain;
+﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
 /// Represents an <see cref="AircraftFamily"/>

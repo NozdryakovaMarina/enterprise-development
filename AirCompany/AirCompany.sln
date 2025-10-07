@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36429.23 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompany.Domain", "AirCompany.Domain\AirCompany.Domain.csproj", "{FC9676E1-FE31-4286-8492-916DD8DE28C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirCompany.Tests", "AirCompany.Tests\AirCompany.Tests.csproj", "{EA22D89F-B7AD-4A27-ACC7-0F10EF8441B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FC9676E1-FE31-4286-8492-916DD8DE28C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC9676E1-FE31-4286-8492-916DD8DE28C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC9676E1-FE31-4286-8492-916DD8DE28C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA22D89F-B7AD-4A27-ACC7-0F10EF8441B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA22D89F-B7AD-4A27-ACC7-0F10EF8441B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA22D89F-B7AD-4A27-ACC7-0F10EF8441B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA22D89F-B7AD-4A27-ACC7-0F10EF8441B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

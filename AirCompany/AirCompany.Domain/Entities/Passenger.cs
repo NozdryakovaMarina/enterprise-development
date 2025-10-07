@@ -1,4 +1,4 @@
-﻿namespace AirCompany.Domain;
+﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
 /// Represents a <see cref="Passenger"/> of the airline

@@ -1,4 +1,4 @@
-﻿namespace AirCompany.Domain;
+﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
 /// Represents a <see cref="Ticket"/> issued to a <see cref="Passenger"/> for a specific <see cref="Flight"/>
