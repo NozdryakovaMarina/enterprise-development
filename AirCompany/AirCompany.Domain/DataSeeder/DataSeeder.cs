@@ -2,6 +2,10 @@
 
 namespace AirCompany.Domain.DataSeeder;
 
+/// <summary>
+/// Provides test data for the air company. Initializes entities: <see cref=AircraftFamily"/>, 
+/// <see cref="AircraftModel/">, <see cref="Flight"/>, <see cref="Passenger"/>, <see cref="Ticket"/> 
+/// </summary>
 public class DataSeeder
 {
     private readonly List<AircraftFamily> _aircraftFamilies;
@@ -10,6 +14,9 @@ public class DataSeeder
     private readonly List<Passenger> _passengers;
     private readonly List<Ticket> _tickets;
 
+    /// <summary>
+    /// Initializes DataSeeder and loads all test data
+    /// </summary>
     public DataSeeder()
     {
         _aircraftFamilies = InitAircraftFamily();
@@ -19,12 +26,18 @@ public class DataSeeder
         _tickets = InitTicket(_passengers, _flights);
     }
 
+    /// <summary>
+    /// Properties for accessing test data
+    /// </summary>
     public List<AircraftFamily> AircraftFamilies => _aircraftFamilies;
     public List<AircraftModel> AircraftModels => _aircraftModels;   
     public List <Flight> Flights => _flights;
     public List<Passenger> Passengers => _passengers;
     public List<Ticket> Tickets => _tickets;
 
+    /// <summary>
+    /// Initializes a <see cref="AircraftFamily"/> with test data
+    /// </summary>
     private static List<AircraftFamily> InitAircraftFamily() => [
         new AircraftFamily {Id = 1, FamilyName = "SSJ100", Manufacturer = "Sukhoi"},
         new AircraftFamily {Id = 2, FamilyName = "A319", Manufacturer = "Airbus"},
@@ -38,6 +51,9 @@ public class DataSeeder
         new AircraftFamily {Id = 10, FamilyName = "A320", Manufacturer = "Airbus"}
         ];
 
+    /// <summary>
+    /// Initializes <see cref="AircraftModel"/> with test data
+    /// </summary>
     public static List<AircraftModel> InitAircraftModel(List<AircraftFamily> families) => [
         new AircraftModel 
         {
@@ -131,6 +147,9 @@ public class DataSeeder
         }
     ];
 
+    /// <summary>
+    /// Initializes <see cref="Flight"/> with test data
+    /// </summary> 
     private static List<Flight> InitFlight(List<AircraftModel> models) => [
         new Flight
         {
@@ -244,6 +263,9 @@ public class DataSeeder
         }
         ];
 
+    /// <summary>
+    /// Initializes <see cref="Passenger"/> with test data
+    /// </summary>
     private static List<Passenger> InitPassenger() => [
         new Passenger {Id = 1, PassportNumber = "716546245", FullName = "Sidorova Anna Sergeevna", BirthDate = new DateOnly(2002, 5, 18)},
         new Passenger {Id = 2, PassportNumber = "651465468", FullName = "Alekseev V.", BirthDate = new DateOnly(1996, 7, 14)},
@@ -259,6 +281,10 @@ public class DataSeeder
         new Passenger {Id = 12, PassportNumber = "174095946", FullName = "Morozov Andrey", BirthDate = new DateOnly(2000, 10, 3)}
         ];
 
+
+    /// <summary>
+    /// Initializes <see cref="Ticket"/> with test data
+    /// </summary>
     private static List<Ticket> InitTicket(List<Passenger> passengers, List<Flight> flights) => [
         new Ticket {Id = 1, Flight = flights[0], Passenger = passengers[0], SeatNumber = "12A", HasHandLuggage = false, TotalBaggageWeightKg = 0},
         new Ticket {Id = 2, Flight = flights[0], Passenger = passengers[1], SeatNumber = "12B", HasHandLuggage = false, TotalBaggageWeightKg = 18},
