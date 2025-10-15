@@ -3,8 +3,16 @@ using AirCompany.Domain.DataSeeder;
 
 namespace AirCompany.Tests;
 
+/// <summary>
+/// Contains unit tests for air company
+/// Uses test data provided by <see cref="DataSeeder"/>
+/// </summary>
 public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
 {
+    /// <summary>
+    /// Test checks whether the 5 most popular flights are 
+    /// displayed correctly based on the number of passengers
+    /// </summary>
     [Fact]
     public void GetTop5FlightsByPassengerCount_ShouldReturnFlightsCorrectOrderByPassengerCount()
     {
@@ -36,6 +44,10 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         Assert.Equal(maxPassengerCount, topFlights[0].passengerCount);
     }
 
+    /// <summary>
+    /// Test checks whether the list of flights with the 
+    /// minimum travel time is displayed correctly
+    /// </summary>
     [Fact]
     public void GetFlightsWithMinimumDuration_ShouldReturnFlightsWithMinimumDuration()
     {
@@ -59,6 +71,10 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         }
     }
 
+    /// <summary>
+    /// Test checks whether passengers who did not 
+    /// have luggage on a particular flight are returning correctly
+    /// </summary>
     [Fact]
     public void GetPassengersWithZeroBaggageByFlight_ShouldReturnPassengersOrderedByName()
     {
@@ -89,6 +105,10 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         Console.WriteLine($"NoBaggage: {passengerInfo.Count}"); 
     }
 
+    /// <summary>
+    /// Test checks whether information about all flights of
+    /// a certain model aircraft for a specific period is returned correctly
+    /// </summary>
     [Fact]
     public void GetFlightsByModelAndPeriod_ShouldReturnFlightsForSelectedModelInPeriod()
     {
@@ -107,6 +127,11 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         });
     }
 
+    /// <summary>
+    /// Test checks whether information about all flights 
+    /// departing from the specified departure point to 
+    /// the specified arrival point is returned correctly
+    /// </summary>
     [Fact]
     public void GetFlightsByRoute_ShouldReturnFlightsForSelectedDepartureAndArrival()
     {
