@@ -285,7 +285,8 @@ public class DataSeeder
         new Ticket {Id = 17, Flight = flights[6], Passenger = passengers[2], SeatNumber = "14F", HasHandLuggage = true, TotalBaggageWeightKg = 15},
 
         new Ticket {Id = 18, Flight = flights[7], Passenger = passengers[9], SeatNumber = "18D", HasHandLuggage = false, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 19, Flight = flights[8], Passenger = passengers[10], SeatNumber = "11C", HasHandLuggage = true, TotalBaggageWeightKg = 9},
-        new Ticket {Id = 20, Flight = flights[9], Passenger = passengers[11], SeatNumber = "29A", HasHandLuggage = true, TotalBaggageWeightKg = 11}
+        new Ticket {Id = 19, Flight = flights[7], Passenger = passengers[10], SeatNumber = "18C", HasHandLuggage = true, TotalBaggageWeightKg = 9},
+        new Ticket {Id = 20, Flight = flights[7], Passenger = passengers[11], SeatNumber = "18A", HasHandLuggage = true, TotalBaggageWeightKg = 11},
+        new Ticket {Id = 21, Flight = flights[7], Passenger = passengers[11], SeatNumber = "18E", HasHandLuggage = true, TotalBaggageWeightKg = 16}
         ];
 }
