@@ -1,27 +1,27 @@
 ﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
-/// Represents a <see cref="Passenger"/> of the airline
+/// Represents a passenger of the airline
 /// </summary>
 public class Passenger
 {
     /// <summary>
-    /// The unique identifier for the <see cref="Passenger"/>
+    /// The unique identifier for the passenger
     /// </summary>
     public required int Id { get; set; }
 
     /// <summary>
-    /// Passport number of the <see cref="Passenger"/>
+    /// Passport number of the passenger
     /// </summary>
     public required string PassportNumber { get; set; }
 
     /// <summary>
-    /// Full name of the <see cref="Passenger"/>
+    /// Full name of the passenger
     /// </summary>
     public required string FullName { get; set; }
 
     /// <summary>
-    /// Birth date of the <see cref="Passenger"/>
+    /// Birth date of the passenger
     /// </summary>
     public DateOnly? BirthDate { get; set; }
 }

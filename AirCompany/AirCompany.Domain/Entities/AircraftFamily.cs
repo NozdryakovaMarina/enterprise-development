@@ -1,22 +1,22 @@
 ﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
-/// Represents an <see cref="AircraftFamily"/>
+/// Represents an aircraft family
 /// </summary>
 public class AircraftFamily
 {
     /// <summary>
-    /// The unique identifier for the <see cref="AircraftFamily"/>
+    /// The unique identifier for the aircraft family
     /// </summary>
     public required int Id { get; set; }
 
     /// <summary>
-    /// Name of the <see cref="AircraftFamily"/>
+    /// Name of the aircraft family
     /// </summary>
     public required string FamilyName { get; set; }
 
     /// <summary>
-    /// Manufacturer of the <see cref="AircraftFamily"/>
+    /// Manufacturer of the aircraft family
     /// </summary>
     public required string Manufacturer { get; set; }
 }

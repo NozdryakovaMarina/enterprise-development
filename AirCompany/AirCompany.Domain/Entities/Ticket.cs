@@ -1,37 +1,37 @@
 ﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
-/// Represents a <see cref="Ticket"/> issued to a <see cref="Passenger"/> for a specific <see cref="Flight"/>
+/// Represents a ticket issued to a <see cref="Passenger"/> for a specific <see cref="Flight"/>
 /// </summary>
 public class Ticket
 {
     /// <summary>
-    /// The unique identifier for the <see cref="Ticket"/>
+    /// The unique identifier for the ticket
     /// </summary>
     public required int Id { get; set; }
 
     /// <summary>
-    /// <see cref="Flight"/> associated with this <see cref="Ticket"/>
+    /// <see cref="Flight"/> associated with this ticket
     /// </summary>
     public required Flight Flight { get; set; }
 
     /// <summary>
-    /// <see cref="Passenger"/> who owns this <see cref="Ticket"/>
+    /// <see cref="Passenger"/> who owns this ticket
     /// </summary>
     public required Passenger Passenger { get; set; }
 
     /// <summary>
-    /// The seat number assigned to this <see cref="Ticket"/>
+    /// The seat number assigned to this ticket
     /// </summary>
     public required string SeatNumber { get; set; }
 
     /// <summary>
-    /// Indicates whether the <see cref="Passenger"/> has hand luggage for this <see cref="Ticket"/>
+    /// Indicates whether the <see cref="Passenger"/> has hand luggage for this ticket
     /// </summary>
     public bool? HasHandLuggage { get; set; }
 
     /// <summary>
-    /// Total baggage weight (in kilograms) for this <see cref="Ticket"/>
+    /// Total baggage weight (in kilograms) for this ticket
     /// </summary>
     public double? TotalBaggageWeightKg { get; set; }
 }

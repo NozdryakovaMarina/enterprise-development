@@ -1,17 +1,17 @@
 ﻿namespace AirCompany.Domain.Entities;
 
 /// <summary>
-/// Represents an <see cref="AircraftModel"/> with technical specifications
+/// Represents an aircraft model with technical specifications
 /// </summary>
 public class AircraftModel
 {
     /// <summary>
-    /// The unique identifier for the <see cref="AircraftModel"/>
+    /// The unique identifier for the aircraft model
     /// </summary>
     public required int Id { get; set; }
 
     /// <summary>
-    /// <see cref="AircraftFamily"/> that this <see cref="AircraftModel"/> belongs to
+    /// <see cref="AircraftFamily"/> that this aircraft model belongs to
     /// </summary>
     public required AircraftFamily AircraftFamily { get; set; }
 
@@ -21,17 +21,17 @@ public class AircraftModel
     public required string ModelName { get; set; }
 
     /// <summary>
-    /// Flight range (in kilometers) for this <see cref="AircraftModel"/>
+    /// Flight range (in kilometers) for this aircraft model
     /// </summary>
     public required double FlightRangeKm { get; set; }
 
     /// <summary>
-    /// Passenger capacity of the <see cref="AircraftModel"/>
+    /// Passenger capacity of the aircraft model
     /// </summary>
     public required int PassengerCapacity { get; set; }
 
     /// <summary>
-    /// Cargo capacity (in kilograms) for the <see cref="AircraftModel"/>
+    /// Cargo capacity (in kilograms) for the aircraft model
     /// </summary>
     public required double CargoCapacityKg { get; set; }
 }
