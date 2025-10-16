@@ -1,5 +1,6 @@
-﻿using AirCompany.Domain.Entities;
-using AirCompany.Domain.DataSeeder;
+﻿using AirCompany.Domain.DataSeeder;
+using AirCompany.Domain.Entities;
+using System.Data;
 
 namespace AirCompany.Tests;
 
@@ -102,14 +103,11 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         var endPeriod = new DateTime(2025, 10, 31);
 
         var flight = seed.Flights
-            .Where(f => f.AircraftModel == model && f.DepartureDateTime == startPeriod && f.ArrivalDateTime == endPeriod)
-            .ToList();
+        .First(f => f.AircraftModel == model && f.DepartureDateTime >= startPeriod && f.DepartureDateTime <= endPeriod);
 
-        Assert.All(flight, f =>
-        {
-            Assert.Equal(model.Id, f.AircraftModel.Id);
-            Assert.InRange(f.DepartureDateTime!.Value, startPeriod, endPeriod);
-        });
+        //Assert
+        Assert.Equal(model.Id, flight.AircraftModel.Id);
+        Assert.InRange(flight.DepartureDateTime!.Value, startPeriod, endPeriod);
     }
 
     /// <summary>
@@ -124,15 +122,11 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         var endAirport = "JFK";
 
         var flight = seed.Flights
-            .Where(f => f.DepartureAirport == startAirport && f.ArrivalAirport == endAirport)
-            .ToList();
+        .First(f => f.DepartureAirport == startAirport && f.ArrivalAirport == endAirport);
 
         //Assert
-        Assert.All(flight, f =>
-        {
-            Assert.Equal(startAirport, f.DepartureAirport);
-            Assert.Equal(endAirport, f.ArrivalAirport);
-        });
+        Assert.Equal(startAirport, flight.DepartureAirport);
+        Assert.Equal(endAirport, flight.ArrivalAirport);
     }
 
 }
