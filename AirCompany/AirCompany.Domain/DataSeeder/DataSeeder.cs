@@ -8,32 +8,23 @@ namespace AirCompany.Domain.DataSeeder;
 /// </summary>
 public class DataSeeder
 {
-    private readonly List<AircraftFamily> _aircraftFamilies;
-    private readonly List<AircraftModel> _aircraftModels;
-    private readonly List<Flight> _flights;
-    private readonly List<Passenger> _passengers;
-    private readonly List<Ticket> _tickets;
+    public List<AircraftFamily> AircraftFamilies { get; private set; }
+    public List<AircraftModel> AircraftModels { get; private set; }
+    public List<Flight> Flights { get; private set; }
+    public List<Passenger> Passengers { get; private set; }
+    public List<Ticket> Tickets { get; private set; }
 
     /// <summary>
     /// Initializes DataSeeder and loads all test data
     /// </summary>
     public DataSeeder()
     {
-        _aircraftFamilies = InitAircraftFamily();
-        _aircraftModels = InitAircraftModel(_aircraftFamilies);
-        _flights = InitFlight(_aircraftModels);
-        _passengers = InitPassenger();
-        _tickets = InitTicket(_passengers, _flights);
+        AircraftFamilies = InitAircraftFamily();
+        AircraftModels = InitAircraftModel(AircraftFamilies);
+        Flights = InitFlight(AircraftModels);
+        Passengers = InitPassenger();
+        Tickets = InitTicket(Passengers, Flights);
     }
-
-    /// <summary>
-    /// Properties for accessing test data
-    /// </summary>
-    public List<AircraftFamily> AircraftFamilies => _aircraftFamilies;
-    public List<AircraftModel> AircraftModels => _aircraftModels;   
-    public List <Flight> Flights => _flights;
-    public List<Passenger> Passengers => _passengers;
-    public List<Ticket> Tickets => _tickets;
 
     /// <summary>
     /// Initializes a <see cref="AircraftFamily"/> with test data
