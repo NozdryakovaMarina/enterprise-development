@@ -30,13 +30,8 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
         Assert.NotNull(topFlights);
         Assert.Equal(5, topFlights.Count);
 
-        for (var i = 0; i < topFlights.Count - 1; i++)
-        {
-            Assert.True(
-                topFlights[i].passengerCount >= topFlights[i + 1].passengerCount,
-                $"Порядок нарушен! {topFlights[i].Flight} ({topFlights[i].passengerCount}) < {topFlights[i + 1].Flight} ({topFlights[i + 1].passengerCount})"
-            );
-        }
+        var isOrdered = topFlights.SequenceEqual(topFlights.OrderByDescending(x => x.passengerCount));
+        Assert.True(isOrdered, "passengerCount should be arranged in descending order");
 
         var maxPassengerCount = seed.Flights
             .Max(f => seed.Tickets.Count(t => t.Flight == f));
@@ -62,13 +57,8 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
 
         Assert.All(minDurationFlights, flight => Assert.Equal(minDuration, flight.Duration));
 
-        for (var i = 0; i < minDurationFlights.Count - 1; i++)
-        {
-            Assert.True(
-                minDurationFlights[i].DepartureDateTime <= minDurationFlights[i + 1].DepartureDateTime,
-                $"Flight {minDurationFlights[i].Code} should depart before {minDurationFlights[i + 1].Code}"
-            );
-        }
+        var isOrdered = minDurationFlights.SequenceEqual(minDurationFlights.OrderBy(x => x.DepartureDateTime));
+        Assert.True(isOrdered, "minDurationFlights are not in chronological order by departure time");
     }
 
     /// <summary>
@@ -96,13 +86,8 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
             Assert.Equal(0, passengerTicket.TotalBaggageWeightKg);
         }
 
-        for (var i = 0; i < passengerInfo.Count - 1; i++)
-        {
-            Assert.True(string.Compare(passengerInfo[i].FullName, passengerInfo[i + 1].FullName) <= 0);
-        }
-
-        Console.WriteLine($"Flight {flight.Code}:");  
-        Console.WriteLine($"NoBaggage: {passengerInfo.Count}"); 
+        var isOrdered = passengerInfo.SequenceEqual(passengerInfo.OrderBy(x => x.FullName));
+        Assert.True(isOrdered, "passengerInfo are not in alphabetical order by name");
     }
 
     /// <summary>
