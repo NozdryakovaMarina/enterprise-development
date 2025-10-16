@@ -8,7 +8,7 @@ public class AircraftModel
     /// <summary>
     /// The unique identifier for the aircraft model
     /// </summary>
-    public required int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// <see cref="AircraftFamily"/> that this aircraft model belongs to

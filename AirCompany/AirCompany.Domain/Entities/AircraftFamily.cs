@@ -8,7 +8,7 @@ public class AircraftFamily
     /// <summary>
     /// The unique identifier for the aircraft family
     /// </summary>
-    public required int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// Name of the aircraft family

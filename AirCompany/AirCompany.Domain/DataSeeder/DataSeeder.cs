@@ -39,16 +39,16 @@ public class DataSeeder
     /// Initializes a <see cref="AircraftFamily"/> with test data
     /// </summary>
     private static List<AircraftFamily> InitAircraftFamily() => [
-        new AircraftFamily {Id = 1, FamilyName = "SSJ100", Manufacturer = "Sukhoi"},
-        new AircraftFamily {Id = 2, FamilyName = "A319", Manufacturer = "Airbus"},
-        new AircraftFamily {Id = 3, FamilyName = "737", Manufacturer = "Boeing"},
-        new AircraftFamily {Id = 4, FamilyName = "777", Manufacturer = "Boeing"},
-        new AircraftFamily {Id = 5, FamilyName = "E-Jets", Manufacturer = "Embraer"},
-        new AircraftFamily {Id = 6, FamilyName = "A321", Manufacturer = "Airbus"},
-        new AircraftFamily {Id = 7, FamilyName = "A330", Manufacturer = "Airbus"},
-        new AircraftFamily {Id = 8, FamilyName = "747", Manufacturer = "Boeing"},
-        new AircraftFamily {Id = 9, FamilyName = "A350", Manufacturer = "Airbus"},
-        new AircraftFamily {Id = 10, FamilyName = "A320", Manufacturer = "Airbus"}
+        new AircraftFamily {FamilyName = "SSJ100", Manufacturer = "Sukhoi"},
+        new AircraftFamily {FamilyName = "A319", Manufacturer = "Airbus"},
+        new AircraftFamily {FamilyName = "737", Manufacturer = "Boeing"},
+        new AircraftFamily {FamilyName = "777", Manufacturer = "Boeing"},
+        new AircraftFamily {FamilyName = "E-Jets", Manufacturer = "Embraer"},
+        new AircraftFamily {FamilyName = "A321", Manufacturer = "Airbus"},
+        new AircraftFamily {FamilyName = "A330", Manufacturer = "Airbus"},
+        new AircraftFamily {FamilyName = "747", Manufacturer = "Boeing"},
+        new AircraftFamily {FamilyName = "A350", Manufacturer = "Airbus"},
+        new AircraftFamily {FamilyName = "A320", Manufacturer = "Airbus"}
         ];
 
     /// <summary>
@@ -57,7 +57,6 @@ public class DataSeeder
     public static List<AircraftModel> InitAircraftModel(List<AircraftFamily> families) => [
         new AircraftModel 
         {
-            Id = 1, 
             ModelName = "SSJ100-95LR", 
             PassengerCapacity = 103, 
             CargoCapacityKg = 49450, 
@@ -66,7 +65,6 @@ public class DataSeeder
         },
         new AircraftModel 
         {
-            Id = 2, 
             ModelName = "A319-100", 
             PassengerCapacity = 138, 
             CargoCapacityKg = 68000, 
@@ -74,8 +72,7 @@ public class DataSeeder
             AircraftFamily = families[1]
         },
         new AircraftModel 
-        {
-            Id = 3, 
+        { 
             ModelName = "737-800", 
             PassengerCapacity = 189, 
             CargoCapacityKg = 79015, 
@@ -83,8 +80,7 @@ public class DataSeeder
             AircraftFamily = families[2]
         },
         new AircraftModel 
-        {
-            Id = 4, 
+        { 
             ModelName = "777-300ER", 
             PassengerCapacity = 408, 
             CargoCapacityKg = 317500, 
@@ -92,8 +88,7 @@ public class DataSeeder
             AircraftFamily = families[3]
         },
         new AircraftModel 
-        {
-            Id = 5, 
+        { 
             ModelName = "E170", 
             PassengerCapacity = 78, 
             CargoCapacityKg = 37200, 
@@ -101,8 +96,7 @@ public class DataSeeder
             AircraftFamily = families[4]
         },
         new AircraftModel 
-        {
-            Id = 6, 
+        { 
             ModelName = "A321NEO", 
             PassengerCapacity = 244, 
             CargoCapacityKg = 93500, 
@@ -110,8 +104,7 @@ public class DataSeeder
             AircraftFamily = families[5]
         },
         new AircraftModel 
-        {
-            Id = 7, 
+        { 
             ModelName = "A330-300", 
             PassengerCapacity = 440, 
             CargoCapacityKg = 230000, 
@@ -119,8 +112,7 @@ public class DataSeeder
             AircraftFamily = families[6]
         },
         new AircraftModel 
-        {
-            Id = 8, 
+        { 
             ModelName = "747-400", 
             PassengerCapacity = 522, 
             CargoCapacityKg = 396890, 
@@ -128,8 +120,7 @@ public class DataSeeder
             AircraftFamily = families[7]
         },
         new AircraftModel 
-        {
-            Id = 9, 
+        { 
             ModelName = "A350-900",
             PassengerCapacity = 440, 
             CargoCapacityKg = 268000, 
@@ -137,8 +128,7 @@ public class DataSeeder
             AircraftFamily = families[8]
         },
         new AircraftModel 
-        {
-            Id = 10, 
+        { 
             ModelName = "A320NEO", 
             PassengerCapacity = 149, 
             CargoCapacityKg = 75500, 
@@ -152,8 +142,7 @@ public class DataSeeder
     /// </summary> 
     private static List<Flight> InitFlight(List<AircraftModel> models) => [
         new Flight
-        {
-            Id = 1,
+        { 
             Code = "U6713",
             DepartureAirport = "SVX",
             ArrivalAirport = "DME",
@@ -163,8 +152,7 @@ public class DataSeeder
             AircraftModel = models[0]
         },
         new Flight
-        {
-            Id = 2,
+        { 
             Code = "SU2602",
             DepartureAirport = "SVO",
             ArrivalAirport = "LED",
@@ -174,8 +162,7 @@ public class DataSeeder
             AircraftModel = models[1]
         },
         new Flight
-        {
-            Id = 3,
+        { 
             Code = "SU2603",
             DepartureAirport = "LED",
             ArrivalAirport = "SVO",
@@ -185,8 +172,7 @@ public class DataSeeder
             AircraftModel = models[2]
         },
         new Flight
-        {
-            Id = 4,
+        { 
             Code = "S70105",
             DepartureAirport = "DME",
             ArrivalAirport = "OVB",
@@ -197,7 +183,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 5,
             Code = "UT233",
             DepartureAirport = "VKO",
             ArrivalAirport = "TJM",
@@ -208,7 +193,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 6,
             Code = "SU1217",
             DepartureAirport = "KUF",
             ArrivalAirport = "SVO",
@@ -219,7 +203,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 7,
             Code = "SU520",
             DepartureAirport = "SVO",
             ArrivalAirport = "DXB",
@@ -230,7 +213,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 8,
             Code = "SU2964",
             DepartureAirport = "AER",
             ArrivalAirport = "KUF",
@@ -241,7 +223,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 9,
             Code = "SU214",
             DepartureAirport = "SVO",
             ArrivalAirport = "JFK",
@@ -252,7 +233,6 @@ public class DataSeeder
         },
         new Flight
         {
-            Id = 10,
             Code = "DP751",
             DepartureAirport = "VKO",
             ArrivalAirport = "SVX",
@@ -267,18 +247,18 @@ public class DataSeeder
     /// Initializes <see cref="Passenger"/> with test data
     /// </summary>
     private static List<Passenger> InitPassenger() => [
-        new Passenger {Id = 1, PassportNumber = "716546245", FullName = "Sidorova Anna Sergeevna", BirthDate = new DateOnly(2002, 5, 18)},
-        new Passenger {Id = 2, PassportNumber = "651465468", FullName = "Alekseev V.", BirthDate = new DateOnly(1996, 7, 14)},
-        new Passenger {Id = 3, PassportNumber = "168425152", FullName = "Kozlov Dmitry Vladimirovich", BirthDate = new DateOnly(1995, 4, 12)},
-        new Passenger {Id = 4, PassportNumber = "425682755", FullName = "Pavlova Maria Viktorovna", BirthDate = new DateOnly(1973, 9, 18)},
-        new Passenger {Id = 5, PassportNumber = "818928973", FullName = "Koroleva Tatiana Olegovna", BirthDate = new DateOnly(1987, 12, 8)},
-        new Passenger {Id = 6, PassportNumber = "979812364", FullName = "Petrov P.", BirthDate = new DateOnly(1976, 3, 16)},
-        new Passenger {Id = 7, PassportNumber = "245687261", FullName = "Nikolaev N.", BirthDate = new DateOnly(2006, 11, 30)},
-        new Passenger {Id = 8, PassportNumber = "358143898", FullName = "Alexandrova Olga", BirthDate = new DateOnly(2004, 6, 3)},
-        new Passenger {Id = 9, PassportNumber = "584555219", FullName = "Mikheev Vasily", BirthDate = new DateOnly(1961, 6, 25)},
-        new Passenger {Id = 10, PassportNumber = "906442887", FullName = "Smirnov S.", BirthDate = new DateOnly(1986, 5, 19)},
-        new Passenger {Id = 11, PassportNumber = "315764121", FullName = "Sergeev Oleg", BirthDate = new DateOnly(1993, 8, 7)},
-        new Passenger {Id = 12, PassportNumber = "174095946", FullName = "Morozov Andrey", BirthDate = new DateOnly(2000, 10, 3)}
+        new Passenger {PassportNumber = "716546245", FullName = "Sidorova Anna Sergeevna", BirthDate = new DateOnly(2002, 5, 18)},
+        new Passenger {PassportNumber = "651465468", FullName = "Alekseev V.", BirthDate = new DateOnly(1996, 7, 14)},
+        new Passenger {PassportNumber = "168425152", FullName = "Kozlov Dmitry Vladimirovich", BirthDate = new DateOnly(1995, 4, 12)},
+        new Passenger {PassportNumber = "425682755", FullName = "Pavlova Maria Viktorovna", BirthDate = new DateOnly(1973, 9, 18)},
+        new Passenger {PassportNumber = "818928973", FullName = "Koroleva Tatiana Olegovna", BirthDate = new DateOnly(1987, 12, 8)},
+        new Passenger {PassportNumber = "979812364", FullName = "Petrov P.", BirthDate = new DateOnly(1976, 3, 16)},
+        new Passenger {PassportNumber = "245687261", FullName = "Nikolaev N.", BirthDate = new DateOnly(2006, 11, 30)},
+        new Passenger {PassportNumber = "358143898", FullName = "Alexandrova Olga", BirthDate = new DateOnly(2004, 6, 3)},
+        new Passenger {PassportNumber = "584555219", FullName = "Mikheev Vasily", BirthDate = new DateOnly(1961, 6, 25)},
+        new Passenger {PassportNumber = "906442887", FullName = "Smirnov S.", BirthDate = new DateOnly(1986, 5, 19)},
+        new Passenger {PassportNumber = "315764121", FullName = "Sergeev Oleg", BirthDate = new DateOnly(1993, 8, 7)},
+        new Passenger {PassportNumber = "174095946", FullName = "Morozov Andrey", BirthDate = new DateOnly(2000, 10, 3)}
         ];
 
 
@@ -286,33 +266,33 @@ public class DataSeeder
     /// Initializes <see cref="Ticket"/> with test data
     /// </summary>
     private static List<Ticket> InitTicket(List<Passenger> passengers, List<Flight> flights) => [
-        new Ticket {Id = 1, Flight = flights[0], Passenger = passengers[0], SeatNumber = "12A", HasHandLuggage = false, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 2, Flight = flights[0], Passenger = passengers[1], SeatNumber = "12B", HasHandLuggage = false, TotalBaggageWeightKg = 18},
-        new Ticket {Id = 3, Flight = flights[0], Passenger = passengers[2], SeatNumber = "12C", HasHandLuggage = true, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[0], Passenger = passengers[0], SeatNumber = "12A", HasHandLuggage = false, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[0], Passenger = passengers[1], SeatNumber = "12B", HasHandLuggage = false, TotalBaggageWeightKg = 18},
+        new Ticket {Flight = flights[0], Passenger = passengers[2], SeatNumber = "12C", HasHandLuggage = true, TotalBaggageWeightKg = 0},
 
-        new Ticket {Id = 4, Flight = flights[1], Passenger = passengers[3], SeatNumber = "15D", HasHandLuggage = true, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 5, Flight = flights[1], Passenger = passengers[4], SeatNumber = "15E", HasHandLuggage = false, TotalBaggageWeightKg = 7},
-        new Ticket {Id = 6, Flight = flights[1], Passenger = passengers[5], SeatNumber = "15F", HasHandLuggage = true, TotalBaggageWeightKg = 10},
+        new Ticket {Flight = flights[1], Passenger = passengers[3], SeatNumber = "15D", HasHandLuggage = true, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[1], Passenger = passengers[4], SeatNumber = "15E", HasHandLuggage = false, TotalBaggageWeightKg = 7},
+        new Ticket {Flight = flights[1], Passenger = passengers[5], SeatNumber = "15F", HasHandLuggage = true, TotalBaggageWeightKg = 10},
 
-        new Ticket {Id = 7, Flight = flights[2], Passenger = passengers[6], SeatNumber = "7A", HasHandLuggage = false, TotalBaggageWeightKg = 13},
-        new Ticket {Id = 8, Flight = flights[2], Passenger = passengers[7], SeatNumber = "7B", HasHandLuggage = false, TotalBaggageWeightKg = 25},
+        new Ticket {Flight = flights[2], Passenger = passengers[6], SeatNumber = "7A", HasHandLuggage = false, TotalBaggageWeightKg = 13},
+        new Ticket {Flight = flights[2], Passenger = passengers[7], SeatNumber = "7B", HasHandLuggage = false, TotalBaggageWeightKg = 25},
 
-        new Ticket {Id = 9, Flight = flights[3], Passenger = passengers[10], SeatNumber = "21C", HasHandLuggage = true, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 10, Flight = flights[3], Passenger = passengers[11], SeatNumber = "21D", HasHandLuggage = false, TotalBaggageWeightKg = 12},
+        new Ticket {Flight = flights[3], Passenger = passengers[10], SeatNumber = "21C", HasHandLuggage = true, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[3], Passenger = passengers[11], SeatNumber = "21D", HasHandLuggage = false, TotalBaggageWeightKg = 12},
 
-        new Ticket {Id = 11, Flight = flights[4], Passenger = passengers[4], SeatNumber = "5A", HasHandLuggage = false, TotalBaggageWeightKg = 17},
-        new Ticket {Id = 12, Flight = flights[4], Passenger = passengers[8], SeatNumber = "5B", HasHandLuggage = true, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 13, Flight = flights[4], Passenger = passengers[10], SeatNumber = "5C", HasHandLuggage = false, TotalBaggageWeightKg = 14},
+        new Ticket {Flight = flights[4], Passenger = passengers[4], SeatNumber = "5A", HasHandLuggage = false, TotalBaggageWeightKg = 17},
+        new Ticket {Flight = flights[4], Passenger = passengers[8], SeatNumber = "5B", HasHandLuggage = true, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[4], Passenger = passengers[10], SeatNumber = "5C", HasHandLuggage = false, TotalBaggageWeightKg = 14},
 
-        new Ticket {Id = 14, Flight = flights[5], Passenger = passengers[0], SeatNumber = "32A", HasHandLuggage = true, TotalBaggageWeightKg = 5},
-        new Ticket {Id = 15, Flight = flights[5], Passenger = passengers[5], SeatNumber = "32B", HasHandLuggage = true, TotalBaggageWeightKg = 8},
+        new Ticket {Flight = flights[5], Passenger = passengers[0], SeatNumber = "32A", HasHandLuggage = true, TotalBaggageWeightKg = 5},
+        new Ticket {Flight = flights[5], Passenger = passengers[5], SeatNumber = "32B", HasHandLuggage = true, TotalBaggageWeightKg = 8},
 
-        new Ticket {Id = 16, Flight = flights[6], Passenger = passengers[1], SeatNumber = "14E", HasHandLuggage = false, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 17, Flight = flights[6], Passenger = passengers[2], SeatNumber = "14F", HasHandLuggage = true, TotalBaggageWeightKg = 15},
+        new Ticket {Flight = flights[6], Passenger = passengers[1], SeatNumber = "14E", HasHandLuggage = false, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[6], Passenger = passengers[2], SeatNumber = "14F", HasHandLuggage = true, TotalBaggageWeightKg = 15},
 
-        new Ticket {Id = 18, Flight = flights[7], Passenger = passengers[9], SeatNumber = "18D", HasHandLuggage = false, TotalBaggageWeightKg = 0},
-        new Ticket {Id = 19, Flight = flights[7], Passenger = passengers[10], SeatNumber = "18C", HasHandLuggage = true, TotalBaggageWeightKg = 9},
-        new Ticket {Id = 20, Flight = flights[7], Passenger = passengers[11], SeatNumber = "18A", HasHandLuggage = true, TotalBaggageWeightKg = 11},
-        new Ticket {Id = 21, Flight = flights[7], Passenger = passengers[11], SeatNumber = "18E", HasHandLuggage = true, TotalBaggageWeightKg = 16}
+        new Ticket {Flight = flights[7], Passenger = passengers[9], SeatNumber = "18D", HasHandLuggage = false, TotalBaggageWeightKg = 0},
+        new Ticket {Flight = flights[7], Passenger = passengers[10], SeatNumber = "18C", HasHandLuggage = true, TotalBaggageWeightKg = 9},
+        new Ticket {Flight = flights[7], Passenger = passengers[11], SeatNumber = "18A", HasHandLuggage = true, TotalBaggageWeightKg = 11},
+        new Ticket {Flight = flights[7], Passenger = passengers[11], SeatNumber = "18E", HasHandLuggage = true, TotalBaggageWeightKg = 16}
         ];
 }

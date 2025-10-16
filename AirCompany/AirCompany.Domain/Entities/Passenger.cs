@@ -8,7 +8,7 @@ public class Passenger
     /// <summary>
     /// The unique identifier for the passenger
     /// </summary>
-    public required int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// Passport number of the passenger

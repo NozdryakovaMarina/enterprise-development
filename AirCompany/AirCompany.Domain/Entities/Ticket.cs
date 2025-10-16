@@ -8,7 +8,7 @@ public class Ticket
     /// <summary>
     /// The unique identifier for the ticket
     /// </summary>
-    public required int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// <see cref="Flight"/> associated with this ticket

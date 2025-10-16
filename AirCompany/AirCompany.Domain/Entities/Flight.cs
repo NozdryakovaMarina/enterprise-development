@@ -8,7 +8,7 @@ public class Flight
     /// <summary>
     /// The unique identifier for the flight
     /// </summary>
-    public required int Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     /// <summary>
     /// Code identifying the flight
