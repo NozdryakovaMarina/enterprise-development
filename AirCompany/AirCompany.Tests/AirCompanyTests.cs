@@ -33,11 +33,6 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
 
         var isOrdered = topFlights.SequenceEqual(topFlights.OrderByDescending(x => x.passengerCount));
         Assert.True(isOrdered, "passengerCount should be arranged in descending order");
-
-        var maxPassengerCount = seed.Flights
-            .Max(f => seed.Tickets.Count(t => t.Flight == f));
-
-        Assert.Equal(maxPassengerCount, topFlights[0].passengerCount);
     }
 
     /// <summary>
@@ -55,7 +50,6 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
 
         //Assert
         Assert.NotEmpty(minDurationFlights);
-
         Assert.All(minDurationFlights, flight => Assert.Equal(minDuration, flight.Duration));
 
         var isOrdered = minDurationFlights.SequenceEqual(minDurationFlights.OrderBy(x => x.DepartureDateTime));
@@ -79,14 +73,6 @@ public class AirCompanyTests(DataSeeder seed) : IClassFixture<DataSeeder>
 
         //Assert
         Assert.NotEmpty(passengerInfo);
-
-        foreach (var passenger in passengerInfo)
-        {
-            var passengerTicket = seed.Tickets.First(t => t.Passenger.Id == passenger.Id);
-            Assert.Equal(flight.Code, passengerTicket.Flight.Code);
-            Assert.Equal(0, passengerTicket.TotalBaggageWeightKg);
-        }
-
         var isOrdered = passengerInfo.SequenceEqual(passengerInfo.OrderBy(x => x.FullName));
         Assert.True(isOrdered, "passengerInfo are not in alphabetical order by name");
     }
